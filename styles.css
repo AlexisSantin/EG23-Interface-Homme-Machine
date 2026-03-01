@@ -1,0 +1,384 @@
+/* ============================================================
+   ISI UI Battle – Stylesheet
+   Minimal, modern, responsive design.
+   ============================================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --color-bg: #0f1117;
+  --color-surface: #1a1d27;
+  --color-surface-hover: #22263a;
+  --color-border: #2e3250;
+  --color-accent: #6c63ff;
+  --color-accent-light: #9b94ff;
+  --color-text: #e8eaf0;
+  --color-text-muted: #8b90a8;
+  --color-danger: #ff5c5c;
+
+  --radius-card: 14px;
+  --radius-btn: 8px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
+  --transition: 0.2s ease;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+}
+
+/* ---------- Reset / Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent-light);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Utility ---------- */
+.hidden {
+  display: none !important;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: linear-gradient(135deg, #1a1d27 0%, #12142099 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.site-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.site-subtitle {
+  margin-top: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Main Container ---------- */
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  flex: 1;
+}
+
+/* ---------- Project Grid ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ---------- Project Card ---------- */
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 36px rgba(108, 99, 255, 0.25);
+  border-color: var(--color-accent);
+}
+
+/* Screenshot thumbnail */
+.card-screenshot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Fallback when no screenshot is provided */
+.card-screenshot-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e2138 0%, #14162280 100%);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 2.5rem;
+  color: var(--color-text-muted);
+}
+
+/* Card body */
+.card-body {
+  padding: 1.25rem 1.25rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+/* Card footer with action buttons */
+.card-footer {
+  padding: 0 1.25rem 1.25rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition), color var(--transition), opacity var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/* Primary – purple accent */
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-light);
+}
+
+/* Secondary – outlined */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-accent-light);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-secondary:hover {
+  background: rgba(108, 99, 255, 0.12);
+}
+
+/* Ghost – muted */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.btn-ghost:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+/* Close button – red */
+.btn-close {
+  background: transparent;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.btn-close:hover {
+  background: rgba(255, 92, 92, 0.12);
+}
+
+/* ---------- Loading / Empty State ---------- */
+.loading-msg,
+.empty-msg {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-top: 4rem;
+  font-size: 1rem;
+}
+
+/* ---------- Iframe Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(10, 11, 18, 0.96);
+  display: flex;
+  flex-direction: column;
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Top bar */
+.modal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* The iframe takes up the rest of the modal height */
+.modal-iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #fff;
+}
+
+/* ---------- Prompt Modal ---------- */
+.prompt-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(10, 11, 18, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.prompt-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.prompt-modal-inner {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  width: 100%;
+  max-width: 700px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+
+.prompt-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.prompt-modal-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Scrollable pre block */
+.prompt-content {
+  padding: 1.25rem;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  white-space: pre-wrap;
+  word-break: break-word;
+  flex: 1;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 480px) {
+  .modal-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-footer {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
