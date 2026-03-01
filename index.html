@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISI UI Battle – Showcase</title>
+  <title>ISI UI Battle – Vitrine</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="header-inner">
       <h1 class="site-title">ISI <span class="accent">UI Battle</span></h1>
       <p class="site-subtitle">
-        Generate · Iterate · Showcase &nbsp;|&nbsp; UTT EG23
+        Générer · Itérer · Présenter &nbsp;|&nbsp; UTT EG23
       </p>
     </div>
   </header>
@@ -24,10 +24,10 @@
     <div id="projects-grid" class="projects-grid"></div>
 
     <!-- Shown while projects are loading -->
-    <p id="loading-msg" class="loading-msg">Loading projects…</p>
+    <p id="loading-msg" class="loading-msg">Chargement des projets…</p>
 
     <!-- Shown when projects.json is empty or fails to load -->
-    <p id="empty-msg" class="empty-msg hidden">No projects found yet. Be the first to submit!</p>
+    <p id="empty-msg" class="empty-msg hidden">Aucun projet trouvé pour l'instant. Soyez le premier à soumettre !</p>
   </main>
 
   <!-- ===== MODAL OVERLAY ===== -->
@@ -35,7 +35,7 @@
     The modal is a full-screen overlay that embeds the student app
     inside an <iframe>.  It is shown/hidden via the .active class.
   -->
-  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project preview">
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Aperçu du projet">
 
     <!-- Top bar with project name and action buttons -->
     <div class="modal-bar">
@@ -43,26 +43,26 @@
       <div class="modal-actions">
         <!-- Opens the project in a new browser tab as a fallback -->
         <a id="modal-open-tab" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-          ↗ Open in new tab
+          ↗ Ouvrir dans un nouvel onglet
         </a>
         <!-- Closes the modal -->
-        <button id="modal-close" class="btn btn-close" aria-label="Close preview">✕ Close</button>
+        <button id="modal-close" class="btn btn-close" aria-label="Fermer l'aperçu">✕ Fermer</button>
       </div>
     </div>
 
     <!-- The iframe that renders the student project -->
-    <iframe id="modal-iframe" class="modal-iframe" title="Project preview" allowfullscreen></iframe>
+    <iframe id="modal-iframe" class="modal-iframe" title="Aperçu du projet" allowfullscreen></iframe>
   </div>
 
-  <!-- ===== PROMPT MODAL ===== -->
+  <!-- ===== MODAL PROMPT ===== -->
   <!--
-    A lightweight text modal that displays the team's prompt.md content.
+    Un modal texte léger qui affiche le contenu du fichier prompt.md de l'équipe.
   -->
-  <div id="prompt-modal" class="prompt-modal" role="dialog" aria-modal="true" aria-label="Prompt details">
+  <div id="prompt-modal" class="prompt-modal" role="dialog" aria-modal="true" aria-label="Détails du prompt">
     <div class="prompt-modal-inner">
       <div class="prompt-modal-header">
         <h2 id="prompt-modal-title">Prompt</h2>
-        <button id="prompt-close" class="btn btn-close" aria-label="Close prompt">✕</button>
+        <button id="prompt-close" class="btn btn-close" aria-label="Fermer le prompt">✕</button>
       </div>
       <pre id="prompt-content" class="prompt-content"></pre>
     </div>
@@ -70,7 +70,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <p>ISI UI Battle &mdash; UTT EG23 &mdash; Open source on
+    <p>ISI UI Battle &mdash; UTT EG23 &mdash; Code source disponible sur
       <a href="https://github.com/AlexisSantin/EG23-Interface-Homme-Machine" target="_blank" rel="noopener noreferrer">GitHub</a>
     </p>
   </footer>

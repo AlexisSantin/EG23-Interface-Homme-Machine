@@ -1,6 +1,6 @@
 {
   "name": "Team Template",
-  "description": "A starter template showing the minimum required structure for ISI UI Battle submissions.",
+  "description": "Un modèle de départ illustrant la structure minimale requise pour les soumissions ISI UI Battle.",
   "url": "https://alexissantin.github.io/EG23-Interface-Homme-Machine/projects/team-template/",
   "screenshot": "screenshot.png",
   "promptFile": "prompt.md",
