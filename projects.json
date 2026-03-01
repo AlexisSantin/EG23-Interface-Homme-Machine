@@ -1,7 +1,7 @@
 [
   {
     "name": "Team Template",
-    "description": "A starter project demonstrating the required file structure. Replace this entry with your own.",
+    "description": "Un projet de départ illustrant la structure de fichiers requise. Remplacez cette entrée par la vôtre.",
     "url": "https://alexissantin.github.io/EG23-Interface-Homme-Machine/projects/team-template/",
     "screenshot": "projects/team-template/screenshot.png",
     "promptFile": "projects/team-template/prompt.md"
